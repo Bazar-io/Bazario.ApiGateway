@@ -1,0 +1,162 @@
+server:
+  port: 443
+
+spring:
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+security:
+  jwt:
+    token:
+      secret-key: ${JWT_SECRET_KEY}
+      algorithm: ${JWT_SECURITY_ALGORITHM}
+      issuer: ${JWT_ISSUER}
+      audience: ${JWT_AUDIENCE}
+
+  endpoints:
+    - path: /api/auth/register
+      method: POST
+      roles: []
+
+    - path: /api/auth/login
+      method: POST
+      roles: []
+
+    - path: /api/auth/confirm-email
+      method: POST
+      roles: []
+
+    - path: /api/auth/refresh-token
+      method: POST
+      roles: []
+
+    - path: /api/auth/reset-password
+      method: POST
+      roles: []
+
+    - path: /api/users/[a-zA-Z0-9-]+
+      method: GET
+      roles: []
+
+    - path: /api/users/[a-zA-Z0-9-]+/ads
+      method: GET
+      roles: []
+
+    - path: /api/categories
+      method: GET
+      roles: []
+
+    - path: /api/categories/[a-zA-Z0-9-]+
+      method: GET
+      roles: []
+
+    - path: /api/ads
+      method: GET
+      roles: []
+
+    - path: /api/ads/[a-zA-Z0-9-]+
+      method: GET
+      roles: []
+
+    - path: /api/complaints
+      method: POST
+      roles: [ ]
+
+    - path: /api/complaints
+      method: GET
+      roles: []
+
+    - path: /api/complaints/[a-zA-Z0-9-]+
+      method: GET
+      roles: [ ]
+
+    - path: /api/complaints/[a-zA-Z0-9-]+
+      method: DELETE
+      roles: [ ]
+
+    - path: /api/change-password
+      method: POST
+      roles: [User, Admin]
+
+    - path: /api/logout
+      method: POST
+      roles: [User, Admin, Owner]
+
+    - path: /api/register-admin
+      method: POST
+      roles: [Owner]
+
+    - path: /api/admins
+      method: POST
+      roles: [Owner]
+
+    - path: /api/admins/[a-zA-Z0-9-]+
+      method: GET
+      roles: [Owner]
+
+    - path: /api/admins/[a-zA-Z0-9-]+
+      method: DELETE
+      roles: [Owner]
+
+    - path: /api/admins/current
+      method: GET
+      roles: [Admin]
+
+    - path: /api/users/current
+      method: GET
+      roles: [User]
+
+    - path: /api/users
+      method: PUT
+      roles: [User]
+
+    - path: /api/admins/[a-zA-Z0-9-]+/ban
+      method: PUT
+      roles: [Owner]
+
+    - path: /api/users/[a-zA-Z0-9-]+/ban
+      method: PUT
+      roles: [Owner, Admin]
+
+    - path: /api/categories
+      method: POST
+      roles: [Owner, Admin]
+
+    - path: /api/categories/[a-zA-Z0-9-]+
+      method: DELETE
+      roles: [Owner, Admin]
+
+    - path: /api/categories/[a-zA-Z0-9-]+
+      method: PUT
+      roles: [Owner, Admin]
+
+    - path: /api/ads
+      method: POST
+      roles: [User]
+
+    - path: /api/current-user/ads
+      method: GET
+      roles: [User]
+
+    - path: /api/ads/[a-zA-Z0-9-]+
+      method: PUT
+      roles: [User]
+
+    - path: /api/ads/[a-zA-Z0-9-]+/refresh
+      method: POST
+      roles: [User]
+
+    - path: /api/ads/[a-zA-Z0-9-]+/hide
+      method: POST
+      roles: [User]
+
+    - path: /api/ads/[a-zA-Z0-9-]+
+      method: DELETE
+      roles: [User]
+
+    - path: /api/ads/[a-zA-Z0-9-]+/ban
+      method: POST
+      roles: [Owner, Admin]
+
