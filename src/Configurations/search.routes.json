@@ -1,0 +1,13 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "search-routes": {
+        "ClusterId": "search-cluster",
+        "Match": {
+          "Path": "search/{**catch-all}"
+        },
+        "Transforms": [ { "PathPattern": "{**catch-all}" } ]
+      }
+    }
+  }
+}

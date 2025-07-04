@@ -1,0 +1,47 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "listings-categories-routes": {
+        "ClusterId": "listings-cluster",
+        "AuthorizationPolicy": "ManageInternalResources",
+        "Match": {
+          "Path": "listings/api/categories/{**catch-all}",
+          "Methods": [ "POST", "PUT", "DELETE" ]
+        },
+        "Transforms": [ { "PathPattern": "api/categories/{**catch-all}" } ]
+      },
+      "listings-ads-id-ban-route": {
+        "ClusterId": "listings-cluster",
+        "AuthorizationPolicy": "ManageUsers",
+        "Match": {
+          "Path": "listings/api/ads/{id}/ban"
+        },
+        "Transforms": [ { "PathPattern": "api/ads/{id}/ban" } ]
+      },
+      "listings-ads-routes": {
+        "ClusterId": "listings-cluster",
+        "AuthorizationPolicy": "User",
+        "Match": {
+          "Path": "listings/api/ads/{**catch-all}",
+          "Methods": [ "POST", "PUT", "DELETE" ]
+        },
+        "Transforms": [ { "PathPattern": "api/ads/{**catch-all}" } ]
+      },
+      "listings-current-user-ads-route": {
+        "ClusterId": "listings-cluster",
+        "AuthorizationPolicy": "User",
+        "Match": {
+          "Path": "listings/api/current-user/ads"
+        },
+        "Transforms": [ { "PathPattern": "api/current-user/ads" } ]
+      },
+      "listings-routes": {
+        "ClusterId": "listings-cluster",
+        "Match": {
+          "Path": "listings/{**catch-all}"
+        },
+        "Transforms": [ { "PathPattern": "{**catch-all}" } ]
+      }
+    }
+  }
+}

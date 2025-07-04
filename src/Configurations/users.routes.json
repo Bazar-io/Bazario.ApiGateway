@@ -1,0 +1,45 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "users-users-current-route": {
+        "ClusterId": "users-cluster",
+        "AuthorizationPolicy": "User",
+        "Match": {
+          "Path": "users/api/users/current"
+        },
+        "Transforms": [ { "PathPattern": "api/users/current" } ]
+      },
+      "users-users-id-ban": {
+        "ClusterId": "users-cluster",
+        "AuthorizationPolicy": "ManageUsers",
+        "Match": {
+          "Path": "users/api/users/{id}/ban"
+        },
+        "Transforms": [ { "PathPattern": "api/users/{id}/ban" } ]
+      },
+      "users-admins-current-route": {
+        "ClusterId": "users-cluster",
+        "AuthorizationPolicy": "Admin",
+        "Match": {
+          "Path": "users/api/admins/current"
+        },
+        "Transforms": [ { "PathPattern": "api/admins/current" } ]
+      },
+      "users-admins-routes": {
+        "ClusterId": "users-cluster",
+        "AuthorizationPolicy": "ManageAdmins",
+        "Match": {
+          "Path": "users/api/admins/{**catch-all}"
+        },
+        "Transforms": [ { "PathPattern": "api/admins/{**catch-all}" } ]
+      },
+      "users-routes": {
+        "ClusterId": "users-cluster",
+        "Match": {
+          "Path": "users/{**catch-all}"
+        },
+        "Transforms": [ { "PathPattern": "{**catch-all}" } ]
+      }
+    }
+  }
+}

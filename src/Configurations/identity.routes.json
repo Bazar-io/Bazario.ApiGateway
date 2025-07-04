@@ -1,0 +1,53 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "identity-confirm-email-route": {
+        "ClusterId": "identity-cluster",
+        "AuthorizationPolicy": "ChangeOwnData",
+        "Match": {
+          "Path": "identity/api/confirm-email"
+        },
+        "Transforms": [ { "PathPattern": "api/confirm-email" } ]
+      },
+      "identity-recover-account-route": {
+        "ClusterId": "identity-cluster",
+        "AuthorizationPolicy": "ChangeOwnData",
+        "Match": {
+          "Path": "identity/api/recover-account"
+        },
+        "Transforms": [ { "PathPattern": "api/recover-account" } ]
+      },
+      "identity-reset-password-route": {
+        "ClusterId": "identity-cluster",
+        "AuthorizationPolicy": "ChangeOwnData",
+        "Match": {
+          "Path": "identity/api/reset-password"
+        },
+        "Transforms": [ { "PathPattern": "api/reset-password" } ]
+      },
+      "identity-change-password-route": {
+        "ClusterId": "identity-cluster",
+        "AuthorizationPolicy": "ChangeOwnData",
+        "Match": {
+          "Path": "identity/api/change-password"
+        },
+        "Transforms": [ { "PathPattern": "api/change-password" } ]
+      },
+      "identity-logout-route": {
+        "ClusterId": "identity-cluster",
+        "AuthorizationPolicy": "Authenticated",
+        "Match": {
+          "Path": "identity/api/logout"
+        },
+        "Transforms": [ { "PathPattern": "api/logout" } ]
+      },
+      "identity-routes": {
+        "ClusterId": "identity-cluster",
+        "Match": {
+          "Path": "identity/{**catch-all}"
+        },
+        "Transforms": [ { "PathPattern": "{**catch-all}" } ]
+      }
+    }
+  }
+}
