@@ -1,0 +1,22 @@
+{
+  "ReverseProxy": {
+    "Routes": {
+      "complaints-complaints-routes": {
+        "ClusterId": "complaints-cluster",
+        "AuthorizationPolicy": "ManageUsers",
+        "Match": {
+          "Path": "complaints/{**catch-all}",
+          "Methods": [ "GET", "PUT", "DELETE" ]
+        },
+        "Transforms": [ { "PathPattern": "{**catch-all}" } ]
+      },
+      "complaints-routes": {
+        "ClusterId": "complaints-cluster",
+        "Match": {
+          "Path": "complaints/{**catch-all}"
+        },
+        "Transforms": [ { "PathPattern": "{**catch-all}" } ]
+      }
+    }
+  }
+}

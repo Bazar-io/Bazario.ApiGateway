@@ -1,0 +1,41 @@
+{
+  "ReverseProxy": {
+    "Clusters": {
+      "identity-cluster": {
+        "Destinations": {
+          "destination": {
+            "Address": "http://bazario-identity-webapi:5001/"
+          }
+        }
+      },
+      "users-cluster": {
+        "Destinations": {
+          "destination": {
+            "Address": "http://bazario-users-webapi:5003/"
+          }
+        }
+      },
+      "listings-cluster": {
+        "Destinations": {
+          "destination": {
+            "Address": "http://bazario-listings-webapi:5005/"
+          }
+        }
+      },
+      "search-cluster": {
+        "Destinations": {
+          "destination": {
+            "Address": "http://bazario-search-webapi:5007/"
+          }
+        }
+      },
+      "complaints-cluster": {
+        "Destinations": {
+          "destination": {
+            "Address": "http://bazario-search-webapi:5011/"
+          }
+        }
+      }
+    }
+  }
+}
