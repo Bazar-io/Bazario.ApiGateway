@@ -14,6 +14,8 @@ builder.Services.AddAppOptions();
 builder.Services.ConfigureAuthentication();
 builder.Services.ConfigureAuthorization();
 
+builder.Services.AddRateLimiting();
+
 builder.Services.AddReverseProxy()
     .LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
@@ -32,6 +34,8 @@ app.UseExceptionHandlingMiddleware();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseRateLimiter();
 
 app.MapReverseProxy();
 

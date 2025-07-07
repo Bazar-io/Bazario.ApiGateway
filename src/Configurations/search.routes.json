@@ -3,6 +3,7 @@
     "Routes": {
       "search-routes": {
         "ClusterId": "search-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "Match": {
           "Path": "search/{**catch-all}"
         },
