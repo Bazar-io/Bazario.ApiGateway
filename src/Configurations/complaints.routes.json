@@ -3,6 +3,7 @@
     "Routes": {
       "complaints-complaints-routes": {
         "ClusterId": "complaints-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "ManageUsers",
         "Match": {
           "Path": "complaints/{**catch-all}",
@@ -12,6 +13,7 @@
       },
       "complaints-routes": {
         "ClusterId": "complaints-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "Match": {
           "Path": "complaints/{**catch-all}"
         },

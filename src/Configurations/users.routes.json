@@ -3,6 +3,7 @@
     "Routes": {
       "users-users-current-route": {
         "ClusterId": "users-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "User",
         "Match": {
           "Path": "users/api/users/current"
@@ -11,6 +12,7 @@
       },
       "users-users-id-ban": {
         "ClusterId": "users-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "ManageUsers",
         "Match": {
           "Path": "users/api/users/{id}/ban"
@@ -19,6 +21,7 @@
       },
       "users-admins-current-route": {
         "ClusterId": "users-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "Admin",
         "Match": {
           "Path": "users/api/admins/current"
@@ -27,6 +30,7 @@
       },
       "users-admins-routes": {
         "ClusterId": "users-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "ManageAdmins",
         "Match": {
           "Path": "users/api/admins/{**catch-all}"
@@ -35,6 +39,7 @@
       },
       "users-routes": {
         "ClusterId": "users-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "Match": {
           "Path": "users/{**catch-all}"
         },

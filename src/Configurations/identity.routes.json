@@ -3,6 +3,7 @@
     "Routes": {
       "identity-confirm-email-route": {
         "ClusterId": "identity-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "ChangeOwnData",
         "Match": {
           "Path": "identity/api/confirm-email"
@@ -11,6 +12,7 @@
       },
       "identity-recover-account-route": {
         "ClusterId": "identity-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "ChangeOwnData",
         "Match": {
           "Path": "identity/api/recover-account"
@@ -19,6 +21,7 @@
       },
       "identity-reset-password-route": {
         "ClusterId": "identity-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "ChangeOwnData",
         "Match": {
           "Path": "identity/api/reset-password"
@@ -27,6 +30,7 @@
       },
       "identity-change-password-route": {
         "ClusterId": "identity-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "ChangeOwnData",
         "Match": {
           "Path": "identity/api/change-password"
@@ -35,6 +39,7 @@
       },
       "identity-logout-route": {
         "ClusterId": "identity-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "Authenticated",
         "Match": {
           "Path": "identity/api/logout"
@@ -43,6 +48,7 @@
       },
       "identity-routes": {
         "ClusterId": "identity-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "Match": {
           "Path": "identity/{**catch-all}"
         },

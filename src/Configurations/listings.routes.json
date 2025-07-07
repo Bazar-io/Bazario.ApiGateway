@@ -3,6 +3,7 @@
     "Routes": {
       "listings-categories-routes": {
         "ClusterId": "listings-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "ManageInternalResources",
         "Match": {
           "Path": "listings/api/categories/{**catch-all}",
@@ -12,6 +13,7 @@
       },
       "listings-ads-id-ban-route": {
         "ClusterId": "listings-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "ManageUsers",
         "Match": {
           "Path": "listings/api/ads/{id}/ban"
@@ -20,6 +22,7 @@
       },
       "listings-ads-routes": {
         "ClusterId": "listings-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "User",
         "Match": {
           "Path": "listings/api/ads/{**catch-all}",
@@ -29,6 +32,7 @@
       },
       "listings-current-user-ads-route": {
         "ClusterId": "listings-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "AuthorizationPolicy": "User",
         "Match": {
           "Path": "listings/api/current-user/ads"
@@ -37,6 +41,7 @@
       },
       "listings-routes": {
         "ClusterId": "listings-cluster",
+        "RateLimiterPolicy": "default-fixed",
         "Match": {
           "Path": "listings/{**catch-all}"
         },
