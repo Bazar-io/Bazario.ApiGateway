@@ -11,12 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bazario.AspNetCore.Shared.Api" Version="1.0.0" />
-    <PackageReference Include="Bazario.AspNetCore.Shared.Authentication" Version="1.0.2" />
-    <PackageReference Include="Bazario.AspNetCore.Shared.Authorization" Version="1.0.3" />
-    <PackageReference Include="Bazario.AspNetCore.Shared.Options" Version="1.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.6" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.2" />
+    <PackageReference Include="Bazario.AspNetCore.Shared.Api" Version="1.1.0" />
+    <PackageReference Include="Bazario.AspNetCore.Shared.Authentication" Version="1.0.3" />
+    <PackageReference Include="Bazario.AspNetCore.Shared.Authorization" Version="1.0.4" />
+    <PackageReference Include="Bazario.AspNetCore.Shared.Options" Version="1.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1" />
     <PackageReference Include="Yarp.ReverseProxy" Version="2.3.0" />
   </ItemGroup>
 
